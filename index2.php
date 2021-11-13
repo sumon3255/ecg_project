@@ -22,14 +22,15 @@
 <div id="chart"></div>
 
 <script>
-  getData()
-  function getData() {
+	setInterval( function getData() {
      xmlreq =  new XMLHttpRequest();
      xmlreq.open("GET","unload2.php",false);
      xmlreq.send(null);
      document.getElementById("chart1").innerHTML = JSON.parse(xmlreq.responseText);
      return  JSON.parse(xmlreq.responseText);
-}  
+} , 1000);
+  getData()
+  
 
 
 
